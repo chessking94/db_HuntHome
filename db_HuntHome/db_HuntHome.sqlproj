@@ -70,4 +70,7 @@
     <Build Include="sftp\Tables\Files.sql" />
     <Build Include="Security\sftp.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
 </Project>
