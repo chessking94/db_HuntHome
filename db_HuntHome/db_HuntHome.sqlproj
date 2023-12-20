@@ -72,8 +72,13 @@
     <Build Include="sftp\Tables\Files.sql" />
     <Build Include="Security\sftp.sql" />
     <Build Include="Security\logs.sql" />
+    <Build Include="logs\Tables\Entries.sql" />
+    <Build Include="logs\Tables\Levels.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="db_HuntHome.refactorlog" />
   </ItemGroup>
 </Project>

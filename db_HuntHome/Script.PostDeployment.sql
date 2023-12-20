@@ -58,3 +58,31 @@ SELECT '2', '/FromHuntHome', 'O'
 WHERE NOT EXISTS (SELECT DirectoryID FROM sftp.Directories WHERE DirectoryID = '2')
 
 SET IDENTITY_INSERT sftp.Directories OFF
+
+
+
+--Schema: logs
+----Table: Levels
+SET IDENTITY_INSERT logs.Levels ON
+
+INSERT INTO logs.Levels (LevelID, Level)
+SELECT '1', 'DEBUG'
+WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '1')
+
+INSERT INTO logs.Levels (LevelID, Level)
+SELECT '2', 'INFO'
+WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '2')
+
+INSERT INTO logs.Levels (LevelID, Level)
+SELECT '3', 'WARNING'
+WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '3')
+
+INSERT INTO logs.Levels (LevelID, Level)
+SELECT '4', 'ERROR'
+WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '4')
+
+INSERT INTO logs.Levels (LevelID, Level)
+SELECT '5', 'CRITICAL'
+WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '5')
+
+SET IDENTITY_INSERT logs.Levels OFF
