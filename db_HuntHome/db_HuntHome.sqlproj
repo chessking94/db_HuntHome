@@ -61,6 +61,8 @@
     <Folder Include="sftp\" />
     <Folder Include="sftp\Tables\" />
     <Folder Include="Security\" />
+    <Folder Include="logs" />
+    <Folder Include="logs\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="sftp\Tables\LoginTypes.sql" />
@@ -69,6 +71,7 @@
     <Build Include="sftp\Tables\Directories.sql" />
     <Build Include="sftp\Tables\Files.sql" />
     <Build Include="Security\sftp.sql" />
+    <Build Include="Security\logs.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
