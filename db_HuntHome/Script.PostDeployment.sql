@@ -86,3 +86,19 @@ SELECT '5', 'CRITICAL'
 WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '5')
 
 SET IDENTITY_INSERT logs.Levels OFF
+
+
+
+--Schema: storage
+----Table: MachineTypes
+SET IDENTITY_INSERT storage.MachineTypes ON
+
+INSERT INTO storage.MachineTypes (MachineTypeID, MachineType)
+SELECT '1', 'Host'
+WHERE NOT EXISTS (SELECT MachineTypeID FROM storage.MachineTypes WHERE MachineTypeID = '1')
+
+INSERT INTO storage.MachineTypes (MachineTypeID, MachineType)
+SELECT '2', 'Virtual'
+WHERE NOT EXISTS (SELECT MachineTypeID FROM storage.MachineTypes WHERE MachineTypeID = '2')
+
+SET IDENTITY_INSERT storage.MachineTypes OFF

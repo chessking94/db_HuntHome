@@ -63,6 +63,8 @@
     <Folder Include="Security\" />
     <Folder Include="logs" />
     <Folder Include="logs\Tables" />
+    <Folder Include="storage" />
+    <Folder Include="storage\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="sftp\Tables\LoginTypes.sql" />
@@ -74,11 +76,13 @@
     <Build Include="Security\logs.sql" />
     <Build Include="logs\Tables\Entries.sql" />
     <Build Include="logs\Tables\Levels.sql" />
+    <Build Include="Security\storage.sql" />
+    <Build Include="storage\Tables\Files.sql" />
+    <Build Include="storage\Tables\Machines.sql" />
+    <Build Include="storage\Tables\MachineTypes.sql" />
+    <Build Include="storage\Tables\Locations.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="db_HuntHome.refactorlog" />
   </ItemGroup>
 </Project>
