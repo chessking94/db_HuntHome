@@ -25,11 +25,11 @@ DECLARE @exec_perm tinyint
 --get username for environment and verify it exists on the server
 IF @server LIKE '%dev%'
 BEGIN
-	SET @login_name = 'pythonuser_dev'
+	SET @login_name = 'automation_user'
 END
 ELSE
 BEGIN
-	SET @login_name = 'pythonuser_prod'
+	SET @login_name = 'automation_user'
 END
 
 SET @xsql = 'SELECT @loginctOUT = COUNT(name) FROM sys.server_principals WHERE name = ''' + @login_name + ''' AND type_desc = ''SQL_LOGIN'''
@@ -50,7 +50,7 @@ BEGIN
 	PRINT 'User created on database'
 END
 
---the pythonuser_* login should have db_datareader and db_datawriter roles on the database, check if assigned and assign if not
+--the environment login should have db_datareader and db_datawriter roles on the database, check if assigned and assign if not
 SET @xsql = '
 SELECT
 @rolectOUT = COUNT(dp2.name)
@@ -91,7 +91,7 @@ BEGIN
 	PRINT 'Added db_datareader role to user'
 END
 
---the pythonuser_* login should also have execute permissions on the database
+--the environment login should also have execute permissions on the database
 SET @xsql = '
 SELECT
 @execpermOUT = COUNT(dp.name)
