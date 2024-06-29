@@ -65,6 +65,8 @@
     <Folder Include="logs\Tables" />
     <Folder Include="storage" />
     <Folder Include="storage\Tables" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="sftp\Tables\LoginTypes.sql" />
@@ -81,6 +83,7 @@
     <Build Include="storage\Tables\Machines.sql" />
     <Build Include="storage\Tables\MachineTypes.sql" />
     <Build Include="storage\Tables\Locations.sql" />
+    <Build Include="dbo\Tables\LastProcessed.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
