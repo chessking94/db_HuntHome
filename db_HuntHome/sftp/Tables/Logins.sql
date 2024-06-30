@@ -6,6 +6,7 @@
     [LoginTypeID]    TINYINT       NOT NULL,
     [HomeDirectory]  VARCHAR (100) NULL,
     [TelegramChatID] VARCHAR (20)  NULL,
+    [LastMonitored] DATETIME       CONSTRAINT [DF_sftpLogins_LastMonitored] DEFAULT ((GETDATE())) NOT NULL,
     CONSTRAINT [PK_sftpLogins_Username] PRIMARY KEY CLUSTERED ([Username] ASC),
     CONSTRAINT [FK_sftpLogins_SftpLoginTypes] FOREIGN KEY ([LoginTypeID]) REFERENCES [sftp].[LoginTypes] ([LoginTypeID])
 );
