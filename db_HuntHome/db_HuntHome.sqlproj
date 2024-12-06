@@ -67,6 +67,8 @@
     <Folder Include="storage\Tables" />
     <Folder Include="dbo" />
     <Folder Include="dbo\Tables" />
+    <Folder Include="Security\Schemas" />
+    <Folder Include="Security\Roles" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="sftp\Tables\LoginTypes.sql" />
@@ -74,16 +76,17 @@
     <Build Include="sftp\Tables\Directions.sql" />
     <Build Include="sftp\Tables\Directories.sql" />
     <Build Include="sftp\Tables\Files.sql" />
-    <Build Include="Security\sftp.sql" />
-    <Build Include="Security\logs.sql" />
     <Build Include="logs\Tables\Entries.sql" />
     <Build Include="logs\Tables\Levels.sql" />
-    <Build Include="Security\storage.sql" />
     <Build Include="storage\Tables\Files.sql" />
     <Build Include="storage\Tables\Machines.sql" />
     <Build Include="storage\Tables\MachineTypes.sql" />
     <Build Include="storage\Tables\Locations.sql" />
     <Build Include="dbo\Tables\LastProcessed.sql" />
+    <Build Include="Security\Schemas\logs.sql" />
+    <Build Include="Security\Schemas\sftp.sql" />
+    <Build Include="Security\Schemas\storage.sql" />
+    <Build Include="Security\Roles\db_executor.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
