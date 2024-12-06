@@ -1,2 +1,1 @@
-﻿CREATE SCHEMA [logs]
-    AUTHORIZATION [dbo];
+﻿CREATE SCHEMA [logs] AUTHORIZATION [dbo]

@@ -1,2 +1,1 @@
-﻿CREATE SCHEMA [storage]
-    AUTHORIZATION [dbo];
+﻿CREATE SCHEMA [storage] AUTHORIZATION [dbo]

@@ -1,3 +1,1 @@
-﻿CREATE SCHEMA [sftp]
-    AUTHORIZATION [dbo];
-
+﻿CREATE SCHEMA [sftp] AUTHORIZATION [dbo]
