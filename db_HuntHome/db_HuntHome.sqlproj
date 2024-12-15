@@ -69,6 +69,8 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="Security\Schemas" />
     <Folder Include="Security\Roles" />
+    <Folder Include="dev" />
+    <Folder Include="dev\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="sftp\Tables\LoginTypes.sql" />
@@ -87,6 +89,9 @@
     <Build Include="Security\Schemas\sftp.sql" />
     <Build Include="Security\Schemas\storage.sql" />
     <Build Include="Security\Roles\db_executor.sql" />
+    <Build Include="Security\Schemas\dev.sql" />
+    <Build Include="dev\Tables\Repositories.sql" />
+    <Build Include="dev\Tables\RelatedRepositories.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />
