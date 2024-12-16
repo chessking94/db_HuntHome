@@ -12,3 +12,23 @@
     CONSTRAINT PK_Repositories PRIMARY KEY (RepoName)
 )
 GO
+
+CREATE TRIGGER [dev].[TRG_Repositories_AfterUpdate] ON [dev].[Repositories]
+AFTER UPDATE
+
+AS
+
+BEGIN
+    IF UPDATE(DeploymentQueued)
+    BEGIN
+        --queue related repositories for deployment
+        UPDATE r
+        SET r.DeploymentQueued = 1
+        FROM inserted i
+        JOIN dev.RelatedRepositories rr ON i.RepoName = rr.RepoName
+        JOIN dev.Repositories r ON rr.RelatedRepoName = r.RepoName
+
+        WHERE i.DeploymentQueued = 1
+        AND r.DeploymentQueued <> 1
+    END
+END
