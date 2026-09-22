@@ -75,6 +75,8 @@
     <Build Include="Security\Schemas\storage.sql" />
     <Build Include="Security\Roles\db_executor.sql" />
     <Build Include="Security\Schemas\dev.sql" />
+    <Build Include="dbo\Tables\ApplicationType.sql" />
+    <Build Include="dbo\Tables\Application.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />

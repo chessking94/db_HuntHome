@@ -58,28 +58,39 @@ ALTER ROLE [db_ddladmin] ADD MEMBER [job_owner]
 ALTER ROLE [db_backupoperator] ADD MEMBER [job_owner]
 
 /* Insert seed data */
+--Schema: dbo
+----Table: ApplicationType
+SET IDENTITY_INSERT dbo.ApplicationType ON
+
+INSERT INTO dbo.ApplicationType (ID, Name, Description, IsActive)
+SELECT v.LevelID, v.Level
+FROM 
+(
+    VALUES
+        (1, 'Python Script', NULL, 1),
+		(2, 'Batch Script', NULL, 1),
+		(3, 'Executable', NULL, 1),
+		(4, 'SQL Query', NULL, 1)
+) AS v (ID, Name, Description, IsActive)
+WHERE NOT EXISTS (SELECT 1 FROM dbo.ApplicationType AS a WHERE a.ID = v.ID)
+
+SET IDENTITY_INSERT dbo.ApplicationType OFF
+
 --Schema: logs
 ----Table: Levels
 SET IDENTITY_INSERT logs.Levels ON
 
 INSERT INTO logs.Levels (LevelID, Level)
-SELECT '1', 'DEBUG'
-WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '1')
-
-INSERT INTO logs.Levels (LevelID, Level)
-SELECT '2', 'INFO'
-WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '2')
-
-INSERT INTO logs.Levels (LevelID, Level)
-SELECT '3', 'WARNING'
-WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '3')
-
-INSERT INTO logs.Levels (LevelID, Level)
-SELECT '4', 'ERROR'
-WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '4')
-
-INSERT INTO logs.Levels (LevelID, Level)
-SELECT '5', 'CRITICAL'
-WHERE NOT EXISTS (SELECT LevelID FROM logs.Levels WHERE LevelID = '5')
+SELECT v.LevelID, v.Level
+FROM 
+(
+    VALUES
+        (1, 'DEBUG'),
+		(2, 'INFO'),
+		(3, 'WARNING'),
+		(4, 'ERROR'),
+		(5, 'CRITICAL')
+) AS v (LevelID, Level)
+WHERE NOT EXISTS (SELECT 1 FROM logs.Levels AS a WHERE a.LevelID = v.LevelID)
 
 SET IDENTITY_INSERT logs.Levels OFF
