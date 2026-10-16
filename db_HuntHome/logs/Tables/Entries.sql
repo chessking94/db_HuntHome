@@ -7,7 +7,7 @@
     [Language] VARCHAR(10) NOT NULL,
     [LogDate] DATE NOT NULL, 
     [LogTime] TIME(3) NOT NULL,
-    [Function] VARCHAR(50) NULL, 
+    [Function] VARCHAR(256) NULL, 
     [LevelID] TINYINT NOT NULL, 
     [Message] VARCHAR(MAX) NOT NULL,
     CONSTRAINT PK_logsEntries_LogID PRIMARY KEY (LogID),
